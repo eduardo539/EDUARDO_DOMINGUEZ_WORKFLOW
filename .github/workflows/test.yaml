@@ -6,12 +6,8 @@ jobs:
   uno:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.2.1
-
-        
       - name: Mensaje
-        run: echo "Hola mundo Eduardo Dominguez"
+        run: echo "Hola mundo!!!"
         
       - name: Touch file  # Crea
         run: |
@@ -26,6 +22,7 @@ jobs:
       - name: Read file  # Lee
         run: |
           cat hola.txt
+          ls -al
 
   dos:
     runs-on: ubuntu-latest
@@ -33,7 +30,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.1
-
-
+        
       - name: Directorio
         run: ls -al
+
+      - name: Instalar  # Corregido el nombre del paso
+        run: |
+          cd .github/workflows
+          ls -al
